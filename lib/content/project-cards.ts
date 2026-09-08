@@ -1,9 +1,10 @@
 import { routes } from '@/lib/routes/routes'
 
 type DevTypeList = "Frontend" | "Backend" | "Full Stack";
-type Tag = "Recent" | "Featured" | "All"
+type Tag = "Recent" | "Featured" | "All" | "Projects"
  
 interface ProjectCards {
+    background?: string
     thumbnail: string
     title: string
     devType: DevTypeList
@@ -18,40 +19,61 @@ interface ProjectCards {
 
 export const PROJECT_CARDS: ProjectCards[] = [
     { 
+        background: "bg-gray-500",
         thumbnail: "/projects/house-wine-1.webp",
         title: "Shared Wines Clone",
         devType: "Full Stack",
         desc: "House Wine (currently Shared Wines) is a clone of a wine collecter/seller site. It features a marketplace where users can send a purchase request, a sign up page, and the option to switch language from English to Nederlands. A combination of Sanity.io & MongoDB helps manage content and user data.",
-        tag: ["Featured"],
+        tag: ["Featured", "Projects"],
         images: [
             { src: "/stack/zustand.webp", alt: "Zustand" },
             { src: "/stack/nextjs.webp", alt: "Nextjs" },
             { src: "/stack/motion.webp", alt: "Motion" },
-            { src: "/stack/shadcn-white.webp", alt: "Shadcn" }
+            { src: "/stack/shadcn-white.webp", alt: "Shadcn" },
+            { src: "/stack/sanity.svg", alt: "Sanity" },
+            { src: "/stack/mongodb.svg", alt: "MongoDB" },
+            { src: "/stack/zod.svg", alt: "Zod" },
+            { src: "/stack/react-email.svg", alt: "React Email" },
+            { src: "/stack/next-auth.png", alt: "Next Auth" },
+            { src: "/stack/resend-mailer.svg", alt: "Resend" },
+            { src: "/stack/next-intl.png", alt: "Next-Intl" },
+            { src: "/stack/swiper.webp", alt: "Swiper" },
+            { src: "/stack/typescript.webp", alt: "Typescript" }
         ],
         href: routes.housewine()
     },
     { 
+        background: "bg-green-100",
         thumbnail: "/projects/sg-clone-1.webp",
         title: "Secret Garden Clone",
-        devType: "Full Stack",
+        devType: "Frontend",
         desc: "A NextJS clone of a weblow site. This Secret Garden clone feaures a garden store that includes a dummy shopping cart system, store locator and newsletter signup.",
-        tag: ["Featured"],
+        tag: ["Featured", "Projects"],
         images: [
-            { src: "/stack/zustand.webp", alt: "zustand-3" },
-            { src: "/stack/zustand.webp", alt: "zustand-4" }
+            { src: "/stack/Hygraph.webp", alt: "Hygraph" },
+            { src: "/stack/zustand.webp", alt: "Zustand" },
+            { src: "/stack/formspree.webp", alt: "Formspree" },
+            { src: "/stack/gsap-green.webp", alt: "GSAP" },
+            { src: "/stack/shadcn-white.webp", alt: "Shadcn" },
+            { src: "/stack/nextjs.webp", alt: "Nextjs" },
+            { src: "/stack/swiper.webp", alt: "Swiper" },
+            { src: "/stack/typescript.webp", alt: "Typescript" }
         ],
         href: routes.sgclone()
     },
-    { 
-        thumbnail: "/projects/sg-clone-1.webp",
+    {
+        background: "bg-black/50", 
+        thumbnail: "/projects/dashboard-1.webp",
         title: "Dashboard",
         devType: "Full Stack",
-        desc: "A NextJS clone of a weblow site. This Secret Garden clone feaures a garden store that includes a dummy shopping cart system, store locator and newsletter signup.",
+        desc: "A dashboard that serves as an alternative to browser bookmarks. Resources can be added, updated and deleted. Resources are divided into different sections/pages, and editing resources is locked behind a role-based login screen.",
         tag: ["Featured"],
         images: [
-            { src: "/stack/zustand.webp", alt: "zustand-3" },
-            { src: "/stack/zustand.webp", alt: "zustand-4" }
+            { src: "/stack/firebase.webp", alt: "Firebase" },
+            { src: "/stack/shadcn-white.webp", alt: "Shadcn" },
+            { src: "/stack/nextjs.webp", alt: "Nextjs" },
+            { src: "/stack/motion.webp", alt: "Motion" },
+            { src: "/stack/typescript.webp", alt: "Typescript" }
         ],
         href: routes.dashboard()
     }
