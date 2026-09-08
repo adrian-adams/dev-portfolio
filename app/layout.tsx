@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navigation from "@/components/navigation/navigation";
 import { Drawer } from "@/components/ui/drawer";
+import { TooltipProvider } from "@/components/ui/tooltip"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -46,7 +47,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col bg-black px-4">
         <Drawer direction="right">
           <Navigation />
-          {children}
+          <TooltipProvider>
+            {children}
+          </TooltipProvider>
         </Drawer>
       </body>
     </html>
