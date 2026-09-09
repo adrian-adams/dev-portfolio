@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Google_Sans_Code } from "next/font/google";
+import { Geist, Geist_Mono, Google_Sans_Code, Dosis } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import Navigation from "@/components/navigation/navigation";
@@ -21,6 +21,11 @@ const googleSansCode = Google_Sans_Code({
   subsets: ["latin"]
 });
 
+const dosis = Dosis({
+  variable: "--font-dosis",
+  subsets: ["latin"]
+})
+
 const caacupeOne = localFont({
   src: "../public/fonts/CaacupeOne-Regular.ttf",
   variable: "--font-caacupe-one",
@@ -41,6 +46,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         ${geistMono.variable} 
         ${googleSansCode.variable}
         ${caacupeOne.variable} 
+        ${dosis.variable}
         h-full antialiased`
       }
     >

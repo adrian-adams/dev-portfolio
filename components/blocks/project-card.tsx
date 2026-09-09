@@ -31,7 +31,7 @@ interface ProjectCardProps {
         src: string
         alt: string
     }[]
-    cta: boolean
+    cta?: boolean
     href?: string
 }
 
@@ -46,7 +46,7 @@ export default function ProjectCard({
     href
 }: ProjectCardProps) {
     return (
-        <Card className="bg-gray-800 pt-0 rounded-md hover:-translate-y-1 transition ease-in-out duration-200">
+        <Card className="bg-gray-800 py-0 rounded-md hover:outline-2 outline-lime-400 transition duration-200 ease-in">
             {thumbnail && (
                 <div className={`${background} h-50 relative bg-[url('/content/skills-bg.webp')] bg-cover bg-center`}>
                     <Image
@@ -79,6 +79,7 @@ export default function ProjectCard({
                                             height={50}
                                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                             className="object-cover"
+                                            loading='eager'
                                         />
                                     </TooltipTrigger>
                                 )}
@@ -91,7 +92,7 @@ export default function ProjectCard({
                 </Marquee>
             </CardContent>
             {cta && (
-                <CardFooter className="bg-lime-400">
+                <CardFooter className="bg-lime-400 rounded-none">
                     <Link href={href as Route ?? routes.home()} target="_blank">
                         <Button>
                             Veiw Project
