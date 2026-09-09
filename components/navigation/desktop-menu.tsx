@@ -11,7 +11,7 @@ export default function DesktopMenu({ data }: NavigationProps) {
     const pathname = usePathname();
 
     return (
-        <div className="hidden md:block">
+        <div className="hidden md:block h-[75px]">
             <ul className="flex flex-row items-center justify-center gap-10">
                 {data.map((item) => (
                     <li
