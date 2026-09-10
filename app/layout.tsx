@@ -54,7 +54,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Drawer direction="right">
           <Navigation />
           <TooltipProvider>
-            {children}
+            <main className="container mx-auto font-google-sans-code">
+              {children}
+            </main>
           </TooltipProvider>
         </Drawer>
       </body>

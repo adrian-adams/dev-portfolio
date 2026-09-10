@@ -32,7 +32,7 @@ export default function Heading({ element: Heading = "h2", title, className, cta
             </Heading>
             {cta && (
                 <Link href={href as Route ?? "/"} target={target}>
-                    <Button>
+                    <Button variant="limeWhite">
                         {ctaText}
                         <MoveRight />
                     </Button>

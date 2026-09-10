@@ -44,7 +44,7 @@ export function MotionContainer({
         <MotionTag
             className={cn("space-y-6", className)}
             variants={variants}
-            initial="hidden"
+            // initial="hidden"
             whileInView="show"
             viewport={{ once: viewportOnce, amount: viewportAmount }}
         >
@@ -86,7 +86,7 @@ export function MotionBlock({
             variants={variants}
             initial="hidden"
             whileInView="show"
-            className={className}
+            className={cn(className)}
             id={id}
         >
             {children}

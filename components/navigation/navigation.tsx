@@ -11,7 +11,7 @@ const NavMenu: { title: string, href: string }[] = [
 
 export default function Navigation() {
     return (
-        <nav className="p-10">
+        <nav className="px-10 pt-10">
             <DesktopMenu data={NavMenu} />
         </nav>
     )

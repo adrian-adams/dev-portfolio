@@ -4,6 +4,7 @@ import ContentBlock from '@/components/blocks/content-block';
 import Heading from '@/components/blocks/heading';
 import ProjectCard from '@/components/blocks/project-card';
 import { MotionContainer, MotionBlock } from '@/components/blocks/motion-blocks';
+import Socials from '@/components/blocks/socials';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -23,7 +24,7 @@ export default function Homepage() {
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     <div className="flex md:justify-end w-full">
                         <Link href={routes.about()}>
-                            <Button>
+                            <Button variant="limeBlack">
                                 More...
                             </Button>
                         </Link>
@@ -41,7 +42,7 @@ export default function Homepage() {
                 />
             </MotionBlock>
 
-            <MotionBlock as='section' className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <MotionBlock as='section' className="utility-project-grid">
                 {PROJECT_CARDS.filter(t => t.tag.includes("Featured")).map((card) => (
                     <ProjectCard
                         key={card.title}
@@ -62,6 +63,7 @@ export default function Homepage() {
                 </div>
                 <div className="flex flex-col items-center md:items-end gap-4 flex-1">
                     <p>You can find me on Github</p>
+                    <Socials />
                     <ul>
                         <li>
                             <Link href={routes.github() as Route} target="_blank">
@@ -76,7 +78,7 @@ export default function Homepage() {
                         </li>
                     </ul>
                     <Link href={routes.contact()}>
-                        <Button>
+                        <Button variant="limeWhite">
                             Contact Me
                         </Button>
                     </Link>

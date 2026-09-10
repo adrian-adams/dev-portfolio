@@ -11,5 +11,6 @@ export const routes = {
     gsapportfolio: () => 'https://github.com/adrian-adams/Portfolio',
     sgclone: () => 'https://github.com/adrian-adams/secret-garden-clone',
     sgmailer: () => 'https://github.com/adrian-adams/secret-garden-mailer',
-    resume: () => 'https://res.cloudinary.com/uc6sqjh2/image/upload/v1788350833/CV-2026_Adrian_Adams_rwqfqi.pdf'
+    resume: () => 'https://res.cloudinary.com/uc6sqjh2/image/upload/v1788350833/CV-2026_Adrian_Adams_rwqfqi.pdf',
+    gmail: () => 'mailto:a4adams4@gmail.com'
 } as const;

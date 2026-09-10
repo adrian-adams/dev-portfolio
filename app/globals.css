@@ -137,11 +137,19 @@
     @apply mb-4;
   }
 
-  h1, h2 {
-    @apply font-caacupe;
+  h1, h2, h3 {
+    @apply font-caacupe text-white;
   }
 }
 
 @utility utility-content-block {
   @apply bg-gray-800 p-6 rounded-md;
+}
+
+@utility utility-outline-lime {
+  @apply  hover:outline-2 hover:outline-lime-400;
+}
+
+@utility utility-project-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4;
 }
