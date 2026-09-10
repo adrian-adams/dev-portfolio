@@ -1,6 +1,6 @@
 import React from 'react'
 import ProjectCard from '@/components/blocks/project-card';
-import { PROJECT_CARDS } from '@/lib/content/project-cards';
+import { PROJECTS } from '@/lib/content/projects';
 import { MotionBlock, MotionContainer } from '@/components/blocks/motion-blocks';
 import Heading from '@/components/blocks/heading';
 import ContentBlock from '@/components/blocks/content-block';
@@ -10,7 +10,7 @@ export default function Projects() {
         <MotionContainer>
             <ContentBlock title="Projects" />
             <MotionBlock as="section" className="utility-project-grid">
-                {PROJECT_CARDS.filter(t => t.tag.includes("Projects")).map((card) => (
+                {PROJECTS.filter(t => t.tag.includes("Projects")).map((card) => (
                     <ProjectCard
                         key={card.title}
                         background={card.background}
@@ -20,6 +20,7 @@ export default function Projects() {
                         desc={card.desc}
                         images={card.images}
                         cta
+                        slug={card.slug}
                     />
                 ))}
             </MotionBlock>

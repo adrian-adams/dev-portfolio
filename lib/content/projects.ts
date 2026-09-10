@@ -3,7 +3,7 @@ import { routes } from '@/lib/routes/routes'
 type DevTypeList = "Frontend" | "Backend" | "Full Stack";
 type Tag = "Recent" | "Featured" | "All" | "Projects"
  
-interface ProjectCards {
+interface Projects {
     background?: string
     thumbnail: string
     title: string
@@ -14,8 +14,7 @@ interface ProjectCards {
         src: string
         alt: string
     }[]
-    href: string
-    slug?: string
+    slug: string
     demo?: string
     github?: string
     features?: {
@@ -24,10 +23,17 @@ interface ProjectCards {
     }[]
 }
 
-export const PROJECT_CARDS: ProjectCards[] = [
+function slugify(title: string): string {
+    return title
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/(^-|-$)/g, '');
+}
+
+const rawProjects: Omit<Projects, 'slug'>[] = [
     { 
         title: "Shared Wines Clone",
-        slug: "shared-wines-clone",
         background: "bg-gray-500",
         thumbnail: "/projects/house-wine-1.webp",
         devType: "Full Stack",
@@ -49,11 +55,11 @@ export const PROJECT_CARDS: ProjectCards[] = [
             { src: "/stack/typescript.webp", alt: "Typescript" },
             { src: "/stack/vscode.webp", alt: "VS Code" }
         ],
-        href: routes.housewine()
+        demo: routes.housewine(),
+        github: routes.housewineGit(),
     },
     { 
         title: "Secret Garden Clone",
-        slug: "secret-garden-clone",
         background: "bg-green-100",
         thumbnail: "/projects/sg-clone-1.webp",
         devType: "Frontend",
@@ -70,11 +76,11 @@ export const PROJECT_CARDS: ProjectCards[] = [
             { src: "/stack/typescript.webp", alt: "Typescript" },
             { src: "/stack/vscode.webp", alt: "VS Code" }
         ],
-        href: routes.sgclone()
+        demo: routes.sgclone(),
+        github: routes.sgcloneGit(),
     },
     {
         title: "Firebase Dashboard",
-        slug: "firebase-dashbaord",
         background: "bg-black/50", 
         thumbnail: "/projects/dashboard-1.webp",
         devType: "Full Stack",
@@ -88,11 +94,11 @@ export const PROJECT_CARDS: ProjectCards[] = [
             { src: "/stack/typescript.webp", alt: "Typescript" },
             { src: "/stack/vscode.webp", alt: "VS Code" }
         ],
-        href: routes.dashboard()
+        demo: routes.dashboard(),
+        github: routes.dashboardGit(),
     },
     {
         title: "MJML Mailer",
-        slug: "mjml-mailer",
         background: "bg-red-500/80", 
         thumbnail: "/projects/dashboard-1.webp",
         devType: "Frontend",
@@ -102,11 +108,10 @@ export const PROJECT_CARDS: ProjectCards[] = [
             { src: "/stack/mjml-logo.png", alt: "MJML" },
             { src: "/stack/vscode.webp", alt: "VS Code" }
         ],
-        href: routes.dashboard()
+        demo: routes.sgmailer()
     },
     {
         title: "GSAP Protfolio",
-        slug: "gsap-portfolio",
         background: "bg-green-500", 
         thumbnail: "/projects/dashboard-1.webp",
         devType: "Frontend",
@@ -120,6 +125,12 @@ export const PROJECT_CARDS: ProjectCards[] = [
             { src: "/stack/Hygraph.webp", alt: "Hygraph" },
             { src: "/stack/gsap-green.webp", alt: "GSAP" },
         ],
-        href: routes.dashboard()
+        demo: routes.gsapportfolio(),
+        github: routes.gsapportfolioGit()
     }
 ]
+
+export const PROJECTS: Projects[] = rawProjects.map(p => ({
+    ...p,
+    slug: slugify(p.title)
+}));

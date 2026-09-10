@@ -10,7 +10,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { routes } from '@/lib/routes/routes';
 import { Route } from 'next';
-import { PROJECT_CARDS } from '@/lib/content/project-cards';
+import { PROJECTS } from '@/lib/content/projects';
 
 export default function Homepage() {
     return (
@@ -43,7 +43,7 @@ export default function Homepage() {
             </MotionBlock>
 
             <MotionBlock as='section' className="utility-project-grid">
-                {PROJECT_CARDS.filter(t => t.tag.includes("Featured")).map((card) => (
+                {PROJECTS.filter(t => t.tag.includes("Featured")).map((card) => (
                     <ProjectCard
                         key={card.title}
                         background={card.background}

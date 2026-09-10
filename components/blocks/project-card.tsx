@@ -33,6 +33,7 @@ interface ProjectCardProps {
     }[]
     cta?: boolean
     href?: string
+    slug: string
 }
 
 export default function ProjectCard({
@@ -43,7 +44,7 @@ export default function ProjectCard({
     desc,
     images,
     cta = false,
-    href
+    slug
 }: ProjectCardProps) {
     return (
         <Card className="bg-gray-800 py-0 rounded-md hover:outline-2 outline-lime-400 transition duration-200 ease-in">
@@ -93,7 +94,7 @@ export default function ProjectCard({
             </CardContent>
             {cta && (
                 <CardFooter className="bg-lime-400 rounded-none">
-                    <Link href={href as Route ?? routes.home()} target="_blank">
+                    <Link href={routes.projectpage(slug) as Route}>
                         <Button>
                             Veiw Project
                             <MoveRight />
