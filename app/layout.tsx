@@ -50,15 +50,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         h-full antialiased`
       }
     >
-      <body className="min-h-full flex flex-col bg-black px-4">
-        <Drawer direction="right">
+      <body className="min-h-full flex flex-col bg-black relative">
+        <TooltipProvider>
           <Navigation />
-          <TooltipProvider>
-            <main className="container mx-auto font-google-sans-code">
-              {children}
-            </main>
-          </TooltipProvider>
-        </Drawer>
+          <main className="container mx-auto font-google-sans-code px-4">
+            {children}
+          </main>
+        </TooltipProvider>
       </body>
     </html>
   );
