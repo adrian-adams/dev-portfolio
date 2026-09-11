@@ -7,9 +7,7 @@ import { MotionContainer, MotionBlock } from '@/components/blocks/motion-blocks'
 import Socials from '@/components/blocks/socials';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import Image from 'next/image';
 import { routes } from '@/lib/routes/routes';
-import { Route } from 'next';
 import { PROJECTS } from '@/lib/content/projects';
 
 export default function Homepage() {
@@ -37,8 +35,7 @@ export default function Homepage() {
                     title="Recent Projects"
                     cta
                     ctaText="See All"
-                    href={routes.housewine()}
-                    target="_blank"
+                    href={routes.projects()}
                 />
             </MotionBlock>
 
@@ -52,31 +49,19 @@ export default function Homepage() {
                         devType={card.devType}
                         desc={card.desc}
                         images={card.images}
+                        slug={card.slug}
                     />
                 ))}
             </MotionBlock>
 
             <MotionBlock as="section" className="bg-lime-400 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-25 xl:gap-125 px-4 md:px-6 py-6 rounded-md">
                 <div className="flex-1 text-center md:text-start">
-                    <h2 className="text-[clamp(3rem,5vw,6rem)]">Get in Touch</h2>
+                    <h2 className="text-[clamp(3rem,5vw,6rem)] text-gray-800">Get in Touch</h2>
                     <p>If you are interested in my work or want to provide feedback about this website, I am open to exchanging ideas.</p>
                 </div>
                 <div className="flex flex-col items-center md:items-end gap-4 flex-1">
                     <p>You can find me on Github</p>
                     <Socials />
-                    <ul>
-                        <li>
-                            <Link href={routes.github() as Route} target="_blank">
-                                <Image
-                                    src="/stack/github-black.svg"
-                                    alt=""
-                                    width={50}
-                                    height={50}
-                                    className="object-cover"
-                                />
-                            </Link>
-                        </li>
-                    </ul>
                     <Link href={routes.contact()}>
                         <Button variant="limeWhite">
                             Contact Me

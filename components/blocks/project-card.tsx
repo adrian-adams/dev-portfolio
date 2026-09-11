@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Button } from "@/components/ui/button";
 import {
     Card,
@@ -14,6 +14,7 @@ import {
     TooltipContent,
     TooltipTrigger,
 } from "@/components/ui/tooltip";
+import Loading from '@/components/blocks/loading'
 import Marquee from 'react-fast-marquee';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -22,7 +23,6 @@ import { routes } from '@/lib/routes/routes';
 import { MoveRight } from 'lucide-react';
 
 interface ProjectCardProps {
-    background?: string
     thumbnail: string
     devType: string
     title: string
@@ -37,7 +37,6 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({
-    background = "bg-black",
     thumbnail,
     devType,
     title,
@@ -48,25 +47,33 @@ export default function ProjectCard({
 }: ProjectCardProps) {
     return (
         <Card className="bg-gray-800 py-0 rounded-md hover:outline-2 outline-lime-400 transition duration-200 ease-in">
-            {thumbnail && (
-                <div className={`${background} h-50 relative bg-[url('/content/skills-bg.webp')] bg-cover bg-center`}>
-                    <Image
-                        src={thumbnail ?? "/next.svg"}
-                        alt={title}
-                        fill
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        className="object-cover p-4"
-                    />
-                </div>
-            )}
+
+            <div className="relative h-50">
+                {thumbnail && (
+                    <Suspense fallback={<Loading color="lime" />}>
+                        <Image
+                            src={thumbnail ?? "/next.svg"}
+                            alt={title}
+                            fill
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            className="object-cover p-4 z-20"
+                            loading='eager'
+                        />
+                    </Suspense>
+                )}
+            </div>
+
             <CardHeader className="flex flex-col items-center justify-center flex-1 gap-4">
                 <div className="flex flex-row-reverse items-center justify-between w-full">
                     <Badge className="text-lime-400">{devType}</Badge>
                     <CardTitle className="font-caacupe text-white text-[clamp(1rem,5vw,1.5rem)]">{title}</CardTitle>
                 </div>
-                <CardDescription className="text-white/80 col-span-2 flex-1">{desc}</CardDescription>
+                <CardDescription className="text-white/80 col-span-2 flex-1 line-clamp-5 text-balance">
+                    {desc}
+                </CardDescription>
             </CardHeader>
-            <CardContent className="w-full bg-gray-600 py-2">
+
+            <CardContent className="w-full bg-gray-600 py-4">
                 <Marquee pauseOnHover pauseOnClick>
                     {images.sort((a, b) => a.alt.localeCompare(b.alt)).map((img) => (
                         <Tooltip key={img.alt}>
@@ -92,6 +99,7 @@ export default function ProjectCard({
                     ))}
                 </Marquee>
             </CardContent>
+
             {cta && (
                 <CardFooter className="bg-lime-400 rounded-none">
                     <Link href={routes.projectpage(slug) as Route}>
@@ -102,6 +110,7 @@ export default function ProjectCard({
                     </Link>
                 </CardFooter>
             )}
+
         </Card>
     )
 }

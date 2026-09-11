@@ -34,7 +34,7 @@ export default function Socials({ fill = "black" }: SVGProps) {
     )
 }
 
-function Github({ fill, height = "4em", width = "4em" }: SVGProps) {
+export function Github({ fill, height = "4em", width = "4em" }: SVGProps) {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 24 24">
             <g fill="none">
@@ -51,7 +51,7 @@ function Github({ fill, height = "4em", width = "4em" }: SVGProps) {
     )
 }
 
-function Portfolio({ fill, height = "4em", width = "4em" }: SVGProps) {
+export function Portfolio({ fill, height = "4em", width = "4em" }: SVGProps) {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 20 20">
             <path fill={fill} d="M4 5H.78c-.37 0-.74.32-.69.84l1.56 9.99S3.5 8.47 3.86 6.7c.11-.53.61-.7.98-.7H10s-.7-2.08-.77-2.31C9.11 3.25 8.89 3 8.45 3H5.14c-.36 0-.7.23-.8.64C4.25 4.04 4 5 4 5m4.88 0h-4s.42-1 .87-1h2.13c.48 0 1 1 1 1M2.67 16.25c-.31.47-.76.75-1.26.75h15.73c.54 0 .92-.31 1.03-.83c.44-2.19 1.68-8.44 1.68-8.44c.07-.5-.3-.73-.62-.73H16V5.53c0-.16-.26-.53-.66-.53h-3.76c-.52 0-.87.58-.87.58L10 7H5.59c-.32 0-.63.19-.69.5c0 0-1.59 6.7-1.72 7.33c-.07.37-.22.99-.51 1.42M15.38 7H11s.58-1 1.13-1h2.29c.71 0 .96 1 .96 1"></path>
@@ -59,7 +59,7 @@ function Portfolio({ fill, height = "4em", width = "4em" }: SVGProps) {
     )
 }
 
-function CV({ fill, height = "4em", width = "4em" }: SVGProps) {
+export function CV({ fill, height = "4em", width = "4em" }: SVGProps) {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 448 512">
             <path fill={fill} d="M48 32C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm98.88 133.234c19.636 0 37.082 6.789 49.929 16.971c11.88 9.452 17.444 18.907 22.298 27.393l-33.923 16.949c-2.427-5.565-5.347-11.387-12.846-17.682c-8.248-6.552-16.478-8.484-23.524-8.484c-27.626 0-42.17 25.693-42.17 54.287c0 37.573 19.161 56.22 42.17 56.22c22.3 0 31.278-15.51 37.08-25.435L219.6 302.66c-6.315 9.926-12.374 19.635-25.95 29.069c-7.262 5.09-23.977 15.037-47.736 15.037C100.586 346.766 64 313.81 64 255.87c0-50.636 34.415-90.637 82.88-90.637m75.483 5.328h45.565L303.31 292.24l35.125-121.678H384l-59.379 171.112H281.01z"></path>
@@ -67,7 +67,7 @@ function CV({ fill, height = "4em", width = "4em" }: SVGProps) {
     )
 }
 
-function Whatsapp({ fill, height = "4em", width = "4em" }: SVGProps) {
+export function Whatsapp({ fill, height = "4em", width = "4em" }: SVGProps) {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 24 24">
             <g fill="none">
