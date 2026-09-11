@@ -39,7 +39,7 @@ export default function Hero() {
     ];
 
     return (
-        <div className="h-[calc(100vh-7.5vw)] flex flex-col items-center justify-between py-10 overflow-hidden">
+        <div className="h-[calc(100vh-75vw)] md:h-[calc(100vh-7.5vw)] flex flex-col items-center justify-between pb-10 overflow-hidden">
             <HeroMarquee
                 data={MarqueeEl}
                 sliceStart={0}
