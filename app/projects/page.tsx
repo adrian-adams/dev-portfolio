@@ -2,7 +2,6 @@ import React from 'react'
 import ProjectCard from '@/components/blocks/project-card';
 import { PROJECTS } from '@/lib/content/projects';
 import { MotionBlock, MotionContainer } from '@/components/blocks/motion-blocks';
-import Heading from '@/components/blocks/heading';
 import ContentBlock from '@/components/blocks/content-block';
 
 export default function Projects() {
@@ -13,7 +12,6 @@ export default function Projects() {
                 {PROJECTS.filter(t => t.tag.includes("Projects")).map((card) => (
                     <ProjectCard
                         key={card.title}
-                        background={card.background}
                         thumbnail={card.thumbnail}
                         title={card.title}
                         devType={card.devType}

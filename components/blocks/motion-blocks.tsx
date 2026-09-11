@@ -4,15 +4,13 @@ import React from 'react'
 import { cn } from '@/lib/tailwind/tailwind-cn'
 import { motion, Variants } from 'motion/react'
 
-type MotionElements = 'div' | 'section' | 'ul' | 'ol' | 'li' | 'table' | 'header' | 'main'
-
 interface MotionProps {
     children: React.ReactNode
     className?: string
     variants?: Variants
     viewportOnce?: boolean
     viewportAmount?: number
-    as?: MotionElements
+    as?: keyof typeof motion;
     id?: string
 }
 
@@ -38,7 +36,7 @@ export function MotionContainer({
     viewportOnce = false,
     viewportAmount = 0.3
 }: MotionProps) {
-    const MotionTag = motion[as];
+    const MotionTag = motion[as] as React.ElementType;
 
     return (
         <MotionTag
@@ -54,6 +52,12 @@ export function MotionContainer({
 }
 
 // Child
+
+/**
+     * Returns the elements of an array that meet the condition specified in a callback function.
+     * @param predicate A function that accepts up to three arguments. The filter method calls the predicate function one time for each element in the array.
+     * @param thisArg An object to which the this keyword can refer in the predicate function. If thisArg is omitted, undefined is used as the this value.
+     */
 
 const defaultBlockVar: Variants = {
     hidden: {
@@ -77,15 +81,18 @@ export function MotionBlock({
     variants = defaultBlockVar,
     as = 'section',
     className,
-    id
+    id,
+    viewportOnce = true,
+    viewportAmount
 }: MotionProps) {
-    const MotionTag = motion[as];
+    const MotionTag = motion[as] as React.ElementType;
 
     return (
         <MotionTag
             variants={variants}
             initial="hidden"
             whileInView="show"
+            viewport={{ once: viewportOnce, amount: viewportAmount }}
             className={cn(className)}
             id={id}
         >
