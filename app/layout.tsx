@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Google_Sans_Code, Dosis } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import Navigation from "@/components/navigation/navigation";
+import Footer from "@/components/footer/footer";
 import { Drawer } from "@/components/ui/drawer";
 import { TooltipProvider } from "@/components/ui/tooltip"
 
@@ -53,9 +54,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col bg-black relative">
         <TooltipProvider>
           <Navigation />
-          <main className="container mx-auto font-google-sans-code px-4">
+          <main className="container mx-auto font-google-sans-code px-4 mb-4">
             {children}
           </main>
+          <Footer />
         </TooltipProvider>
       </body>
     </html>
