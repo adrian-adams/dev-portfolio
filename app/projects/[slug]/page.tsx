@@ -84,8 +84,7 @@ export default async function Project({ params, searchParams }: ProjectPageProps
                                         loading='eager'
                                     />
                                 </div>
-                            )
-                            }
+                            )}
                         </Suspense>
                     </Thumbnail>
                     <div className="flex flex-col justify-center gap-6">
