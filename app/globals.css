@@ -133,10 +133,6 @@
     @apply font-google-sans-code;
   }
 
-  main {
-    @apply mb-4;
-  }
-
   h1, h2, h3 {
     @apply font-caacupe text-white;
   }
