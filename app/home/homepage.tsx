@@ -43,7 +43,6 @@ export default function Homepage() {
                 {PROJECTS.filter(t => t.tag.includes("Featured")).map((card) => (
                     <ProjectCard
                         key={card.title}
-                        background={card.background}
                         thumbnail={card.thumbnail}
                         title={card.title}
                         devType={card.devType}
