@@ -21,7 +21,7 @@ export default function DesktopMenu({ data }: NavigationProps) {
                             key={item.title}
                             className={cn(
                                 "text-white/80",
-                                pathname === item.href && "text-lime-400 underline underline-offset-4"
+                                pathname === item.href && "bg-lime-400 px-2 py-1 rounded-md text-black font-bold"
                             )}
                         >
                             <Link href={item.href as Route}>

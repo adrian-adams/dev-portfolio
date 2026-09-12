@@ -16,7 +16,7 @@ export default function About() {
     return (
         <MotionContainer as="div">
             <MotionBlock>
-                <ContentBlock title="About" />
+                <ContentBlock title="About" element="h1" />
             </MotionBlock>
             <MotionBlock className="grid grid-cols-1 md:grid-cols-5 gap-6 utility-content-block utility-outline-lime">
                 <AboutIntro />

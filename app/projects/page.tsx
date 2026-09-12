@@ -7,7 +7,7 @@ import ContentBlock from '@/components/blocks/content-block';
 export default function Projects() {
     return (
         <MotionContainer>
-            <ContentBlock title="Projects" />
+            <ContentBlock title="Projects" element="h1" />
             <MotionBlock as="section" className="utility-project-grid">
                 {PROJECTS.filter(t => t.tag.includes("Projects")).map((card) => (
                     <ProjectCard

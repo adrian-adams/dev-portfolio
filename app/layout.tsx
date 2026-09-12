@@ -54,7 +54,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col bg-black relative">
         <TooltipProvider>
           <Navigation />
-          <main className="container mx-auto font-google-sans-code px-4 mb-4">
+          <main className="container mx-auto font-google-sans-code px-4 mb-4 flex-1">
             {children}
           </main>
           <Footer />
