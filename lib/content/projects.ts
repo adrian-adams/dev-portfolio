@@ -101,7 +101,7 @@ const rawProjects: Omit<Projects, 'slug'>[] = [
         desc: "Secret Garden is a frontend recreation of a modern garden retail experience, built with Next.js and a headless CMS. The project combines dynamic product content, a client-side shopping cart, responsive layouts, and GSAP-powered animation to recreate the feel of a production e-commerce site while exploring modern frontend architecture.",
         tag: ["Featured", "Projects"],
         images: [
-            { src: "/stack/Hygraph.webp", alt: "Hygraph" },
+            { src: "/stack/hygraph.webp", alt: "Hygraph" },
             { src: "/stack/zustand.webp", alt: "Zustand" },
             { src: "/stack/formspree.webp", alt: "Formspree" },
             { src: "/stack/gsap-green.webp", alt: "GSAP" },
@@ -244,7 +244,7 @@ const rawProjects: Omit<Projects, 'slug'>[] = [
             { src: "/stack/nextjs.webp", alt: "Nextjs" },
             { src: "/stack/ts.svg", alt: "Typescript" },
             { src: "/stack/vscode.webp", alt: "VS Code" },
-            { src: "/stack/Hygraph.webp", alt: "Hygraph" },
+            { src: "/stack/hygraph.webp", alt: "Hygraph" },
             { src: "/stack/gsap-green.webp", alt: "GSAP" }
         ],
         demo: routes.gsapportfolio(),
