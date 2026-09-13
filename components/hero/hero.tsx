@@ -64,7 +64,7 @@ export default function Hero() {
 
 function HeroMarquee({ data, direction, className, sliceStart, sliceEnd }: HeroMarqueeData) {
     return (
-        <Marquee autoFill direction={direction} className={`${className} overflow-visible h-20`}>
+        <Marquee autoFill direction={direction} className={`${className} h-20`}>
             {data.sort((a, b) => a.stack.localeCompare(b.stack)).slice(sliceStart, sliceEnd).map((item) => (
                 <p
                     key={item.stack}

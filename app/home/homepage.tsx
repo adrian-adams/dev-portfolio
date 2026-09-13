@@ -60,7 +60,7 @@ export default function Homepage() {
                     <p>If you are interested in my work or want to provide feedback about this website, you're welcome to say hi!</p>
                 </div>
                 <div className="flex flex-col items-center md:items-end gap-4 text-center md:text-start">
-                    <p>Why not reach out or chekc out my stuff?</p>
+                    <p>Why not reach out or check out my stuff?</p>
                     <Socials />
                     <Link href={routes.contact()}>
                         <Button variant="limeWhite">

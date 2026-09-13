@@ -48,12 +48,12 @@ const rawProjects: Omit<Projects, 'slug'>[] = [
             { src: "/stack/sanity.svg", alt: "Sanity" },
             { src: "/stack/mongodb.svg", alt: "MongoDB" },
             { src: "/stack/zod.svg", alt: "Zod" },
-            { src: "/stack/react-email.svg", alt: "React Email" },
+            { src: "/stack/react-email.webp", alt: "React Email" },
             { src: "/stack/next-auth.png", alt: "Next Auth" },
             { src: "/stack/resend-mailer.svg", alt: "Resend" },
             { src: "/stack/next-intl.png", alt: "Next-Intl" },
             { src: "/stack/swiper.webp", alt: "Swiper" },
-            { src: "/stack/typescript.webp", alt: "Typescript" },
+            { src: "/stack/ts.svg", alt: "Typescript" },
             { src: "/stack/vscode.webp", alt: "VS Code" }
         ],
         demo: routes.housewine(),
@@ -108,7 +108,7 @@ const rawProjects: Omit<Projects, 'slug'>[] = [
             { src: "/stack/shadcn-white.webp", alt: "Shadcn" },
             { src: "/stack/nextjs.webp", alt: "Nextjs" },
             { src: "/stack/swiper.webp", alt: "Swiper" },
-            { src: "/stack/typescript.webp", alt: "Typescript" },
+            { src: "/stack/ts.svg", alt: "Typescript" },
             { src: "/stack/vscode.webp", alt: "VS Code" }
         ],
         demo: routes.sgclone(),
@@ -160,7 +160,7 @@ const rawProjects: Omit<Projects, 'slug'>[] = [
             { src: "/stack/shadcn-white.webp", alt: "Shadcn" },
             { src: "/stack/nextjs.webp", alt: "Nextjs" },
             { src: "/stack/motion.webp", alt: "Motion" },
-            { src: "/stack/typescript.webp", alt: "Typescript" },
+            { src: "/stack/ts.svg", alt: "Typescript" },
             { src: "/stack/vscode.webp", alt: "VS Code" }
         ],
         demo: routes.dashboard(),
@@ -242,7 +242,7 @@ const rawProjects: Omit<Projects, 'slug'>[] = [
         images: [
             { src: "/stack/shadcn-white.webp", alt: "Shadcn" },
             { src: "/stack/nextjs.webp", alt: "Nextjs" },
-            { src: "/stack/typescript.webp", alt: "Typescript" },
+            { src: "/stack/ts.svg", alt: "Typescript" },
             { src: "/stack/vscode.webp", alt: "VS Code" },
             { src: "/stack/Hygraph.webp", alt: "Hygraph" },
             { src: "/stack/gsap-green.webp", alt: "GSAP" }
