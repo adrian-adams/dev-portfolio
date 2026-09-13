@@ -4,7 +4,6 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navigation from "@/components/navigation/navigation";
 import Footer from "@/components/footer/footer";
-import { Drawer } from "@/components/ui/drawer";
 import { TooltipProvider } from "@/components/ui/tooltip"
 
 const geistSans = Geist({

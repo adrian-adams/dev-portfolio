@@ -47,7 +47,7 @@ export default function Hero() {
                 className="rotate-6"
             />
             <div className="text-lime-400 text-center w-full">
-                <h1 className="text-[clamp(4rem,20vw,12rem)] leading-16 sm:leading-20 md:leading-26">
+                <h1 className="text-[clamp(4rem,20vw,12rem)] leading-16 sm:leading-20 md:leading-26 antialiased">
                     <span className="block text-[clamp(2rem,20vw,3rem)] text-lime-400">Hello! I'm</span> Adrian
                 </h1>
                 <p className="text-xl pt-6">Frontend React Developer</p>

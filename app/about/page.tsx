@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
+import type { Metadata } from "next";
 import ContentBlock from '@/components/blocks/content-block';
-import Heading from '@/components/blocks/heading';
 import { MotionContainer, MotionBlock } from '@/components/blocks/motion-blocks';
 import Socials from '@/components/blocks/socials';
 import { Button } from '@/components/ui/button';
@@ -12,13 +12,18 @@ import Marquee from 'react-fast-marquee';
 import fs from 'fs';
 import path from 'path';
 
+export const metadata: Metadata = {
+    title: "About Me",
+    description: "Hello! My name is Adrian, a React developer."
+}
+
 export default function About() {
     return (
         <MotionContainer as="div">
             <MotionBlock>
                 <ContentBlock title="About" element="h1" />
             </MotionBlock>
-            <MotionBlock className="grid grid-cols-1 md:grid-cols-5 gap-6 utility-content-block utility-outline-lime">
+            <MotionBlock className="grid grid-cols-1 lg:grid-cols-5 gap-6 utility-content-block utility-outline-lime">
                 <AboutIntro />
             </MotionBlock>
             <MotionBlock className="grid grid-cols-1 lg:grid-cols-3 items-center justify-center gap-4">
@@ -35,9 +40,10 @@ export default function About() {
 }
 
 function AboutIntro() {
+
     return (
         <>
-            <div className="w-auto h-full md:col-span-2 rounded-md border-4 border-lime-400 overflow-hidden">
+            <div className="w-auto h-fit my-auto md:col-span-2 rounded-md border-4 border-lime-400 overflow-hidden">
                 <Image
                     src="/content/about-me.gif"
                     alt="About Me"
@@ -50,7 +56,11 @@ function AboutIntro() {
             </div>
             <div className="md:col-span-3 flex flex-col justify-evenly gap-4">
                 <p className="text-white/80">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    <span className="font-caacupe text-4xl">HELLO!</span> My working journey didn't begin with &lt;<span className="text-blue-400">h1</span>&gt;<b>Hello World</b>&lt;/<span className="text-blue-400">h1</span>&gt;, but in retail. Collecting experiencing in staff, inventory & warehouse management, production timelines, logistics and even client management, I was a tiny cat looking for the treat sitting in front of my face.
+                    <br /> <br />
+                    Discovering the labyrinth of coding and its very inclusive community gave me the nudge I needed to expand my skills and build projects that, after many hours and much balding, made me proud.
+                    <br /> <br />
+                    I now focus on growing my frontend skills and technical stack, with the goal of contributing what I have to wherever I happen to go.
                 </p>
                 <Link href={routes.resume() as Route ?? routes.home()} target="_blank">
                     <Button variant="limeTransparent">

@@ -19,8 +19,10 @@ export default function Homepage() {
 
             <MotionBlock>
                 <ContentBlock title="About">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <div className="flex md:justify-end w-full">
+                    <p className="md:w-10/12 mx-auto text-pretty">
+                        I'm a self-taught frontend web developer. My web development journey began with my Content Admin. role, where I managed websites using Adobe Experience Manager (AEM). Picking up HTML, CSS, JS & Bootstrap, I found myself wanting to do more. I chose React simply because I found it fun. I enjoyed how easy it is and how much control I have over a project. I enjoy coding -  both the successes and the faliures. But the successes a lot more for sure.
+                    </p>
+                    <div className="flex justify-center md:justify-end w-full">
                         <Link href={routes.about()}>
                             <Button variant="limeBlack">
                                 More...
@@ -33,7 +35,6 @@ export default function Homepage() {
             <MotionBlock>
                 <Heading
                     title="Recent Projects"
-                    cta
                     ctaText="See All"
                     href={routes.projects()}
                 />
@@ -56,10 +57,10 @@ export default function Homepage() {
             <MotionBlock as="section" className="bg-lime-400 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-25 xl:gap-125 px-4 md:px-6 py-6 rounded-md">
                 <div className="flex-1 text-center md:text-start">
                     <h2 className="text-[clamp(3rem,5vw,6rem)] text-gray-800">Get in Touch</h2>
-                    <p>If you are interested in my work or want to provide feedback about this website, I am open to exchanging ideas.</p>
+                    <p>If you are interested in my work or want to provide feedback about this website, you're welcome to say hi!</p>
                 </div>
-                <div className="flex flex-col items-center md:items-end gap-4 flex-1">
-                    <p>You can find me on Github</p>
+                <div className="flex flex-col items-center md:items-end gap-4 text-center md:text-start">
+                    <p>Why not reach out or chekc out my stuff?</p>
                     <Socials />
                     <Link href={routes.contact()}>
                         <Button variant="limeWhite">
