@@ -27,7 +27,7 @@ export default function Socials({ fill = "black" }: SVGProps) {
             <Link href={routes.resume() as Route} target="_blank" title="CV" className="utility-hover">
                 <CV fill={fill} />
             </Link>
-            <Link href={routes.contact() as Route} target="_blank" title="Contact" className="utility-hover">
+            <Link href={routes.contact() as Route} title="Contact" className="utility-hover">
                 <Gmail fill={fill} />
             </Link>
         </div>

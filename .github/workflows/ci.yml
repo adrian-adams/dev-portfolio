@@ -11,7 +11,7 @@ jobs:
         runs-on: ubuntu-latest
         defaults:
             run:
-                working-directory: div-portfolio
+                working-directory: dev-portfolio
 
         steps:
             -   name: Checkout code
@@ -20,6 +20,7 @@ jobs:
             -   name: Set up Node
                 uses: actions/setup-node@v4
                 with: 
+                    node-version: 'lts/*'
                     cache: 'npm'
                     cache-dependency-path: dev-portfolio/package-lock.json
 
@@ -27,7 +28,7 @@ jobs:
                 run: npm ci 
 
             -   name: Lint
-                run: npm run Lint
+                run: npm run lint
 
             -   name: Type check
                 run: npx tsc --noEmit
