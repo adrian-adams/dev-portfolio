@@ -17,6 +17,6 @@ export const routes = {
     sgcloneGit: () => 'https://github.com/adrian-adams/secret-garden-clone' as Route,
     sgmailer: () => 'https://adrian-adams.github.io/secret-garden-mailer/' as Route,
     sgmailerGit: () => 'https://github.com/adrian-adams/secret-garden-mailer' as Route,
-    resume: () => 'https://res.cloudinary.com/uc6sqjh2/image/upload/v1788350833/CV-2026_Adrian_Adams_rwqfqi.pdf' as Route,
+    resume: () => 'https://res.cloudinary.com/uc6sqjh2/image/upload/CV-2026_Adrian_Adams_rwqfqi.pdf' as Route,
     gmail: () => 'mailto:a4adams4@gmail.com' as Route
 } as const;
