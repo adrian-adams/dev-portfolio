@@ -46,12 +46,12 @@ export default function ContactForm() {
                 <FieldGroup className="p-4">
                     <Field data-invalid={!!state.errors?.name}>
                         <FieldLabel htmlFor="name" className="font-bold text-lime-400">Name</FieldLabel>
-                        <Input id="name" name="name" type="text" className="bg-white" aria-invalid={!!state.errors?.name} />
+                        <Input id="name" name="name" type="text" autoComplete='name' className="bg-white" aria-invalid={!!state.errors?.name} />
                         <FieldError errors={state.errors?.name?.map((message) => ({ message }))} />
                     </Field>
                     <Field data-invalid={!!state.errors?.email}>
                         <FieldLabel htmlFor="email" className="font-bold text-lime-400">Email</FieldLabel>
-                        <Input id="email" name="email" type="email" className="bg-white" aria-invalid={!!state.errors?.email} />
+                        <Input id="email" name="email" type="email" autoComplete='email' className="bg-white" aria-invalid={!!state.errors?.email} />
                         <FieldError errors={state.errors?.email?.map((message) => ({ message }))} />
                     </Field>
                     <Field data-invalid={!!state.errors?.message}>
