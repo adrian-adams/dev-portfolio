@@ -45,7 +45,7 @@ function AboutIntro() {
             </div>
             <div className="flex flex-col gap-4 md:col-span-3 justify-evenly">
                 <p className="text-white/80">
-                    <span className="text-4xl font-caacupe">HELLO!</span> My working journey didn't begin with &lt;<span className="text-blue-400">h1</span>&gt;<b>Hello World</b>&lt;/<span className="text-blue-400">h1</span>&gt;, but in retail. Collecting experiencing in staff, inventory & warehouse management, production timelines, logistics and even client management, I was a tiny cat looking for the treat sitting in front of my face.
+                    <span className="font-caacupe text-4xl">HELLO!</span> My working journey didn't begin with &lt;<span className="text-blue-400">h1</span>&gt;<b>Hello World</b>&lt;/<span className="text-blue-400">h1</span>&gt;, but in retail. Whilst collecting experience in staff, inventory & warehouse management, production timelines, logistics and even client management, I was a tiny cat looking for the treat sitting in front of my face.
                     <br /> <br />
                     Discovering the labyrinth of coding and its very inclusive community gave me the nudge I needed to expand my skills and build projects that, after many hours and much balding, made me proud.
                     <br /> <br />
