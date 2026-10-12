@@ -21,14 +21,17 @@ interface SVGProps {
 export default function Socials({ fill = "black" }: SVGProps) {
     return (
         <div className="flex flex-wrap items-center justify-center gap-2">
-            <Link href={routes.github() as Route} target="_blank" title="Github" className="utility-hover">
+            <Link href={routes.github()} target="_blank" title="Github" className="utility-hover">
                 <Github fill={fill} />
             </Link>
-            <Link href={routes.resume() as Route} target="_blank" title="CV" className="utility-hover">
+            <Link href={routes.resume()} target="_blank" title="CV" className="utility-hover">
                 <CV fill={fill} />
             </Link>
-            <Link href={routes.contact() as Route} title="Contact" className="utility-hover">
+            <Link href={routes.contact()} title="Contact" className="utility-hover">
                 <Gmail fill={fill} />
+            </Link>
+            <Link href={routes.linkedin()} target="_blank" title="LinkedIn" className="utility-hover">
+                <LinkedIn fill={fill} />
             </Link>
         </div>
     )
@@ -88,6 +91,15 @@ function Gmail({ fill, height = "5.2em", width = "5.2em" }: SVGProps) {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 24 24">
             <path fill={fill} d="M20 18h-2V9.25L12 13L6 9.25V18H4V6h1.2l6.8 4.25L18.8 6H20m0-2H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2"></path>
+        </svg>
+    )
+}
+
+
+function LinkedIn({ fill, height = "3.8em", width = "3.8em" }: SVGProps) {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 24 24">
+            <path fill={fill} fillRule="evenodd" d="M1 2.838A1.84 1.84 0 0 1 2.838 1H21.16A1.837 1.837 0 0 1 23 2.838V21.16A1.84 1.84 0 0 1 21.161 23H2.838A1.84 1.84 0 0 1 1 21.161zm8.708 6.55h2.979v1.496c.43-.86 1.53-1.634 3.183-1.634c3.169 0 3.92 1.713 3.92 4.856v5.822h-3.207v-5.106c0-1.79-.43-2.8-1.522-2.8c-1.515 0-2.145 1.089-2.145 2.8v5.106H9.708zm-5.5 10.403h3.208V9.25H4.208zM7.875 5.812a2.063 2.063 0 1 1-4.125 0a2.063 2.063 0 0 1 4.125 0" clipRule="evenodd"></path>
         </svg>
     )
 }

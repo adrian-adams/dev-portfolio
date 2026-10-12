@@ -1,5 +1,5 @@
-import { routes } from '@/lib/routes/routes'
-import { title } from 'process'
+import { routes } from '@/lib/routes/routes';
+import { stackImages } from './stack';
 
 type DevTypeList = "Frontend" | "Backend" | "Full Stack" | "Mailer"
 type Tag = "Recent" | "Featured" | "All" | "Projects"
@@ -40,22 +40,7 @@ const rawProjects: Omit<Projects, 'slug'>[] = [
         devType: "Full Stack",
         desc: "House Wine (currently Shared Wines) is a full-stack wine marketplace clone inspired by housewine.nl. Users can browse and filter a wine catalog, submit purchase requests, sign up via credentials or Google, and switch between English and Nederlands. Sanity CMS powers content while MongoDB handles user and order data, with a CI/CD pipeline enforcing lint, type-check, and build gates on every pull request before deploying to Vercel.",
         tag: ["Featured", "Projects"],
-        images: [
-            { src: "/stack/zustand.webp", alt: "Zustand" },
-            { src: "/stack/nextjs.webp", alt: "Nextjs" },
-            { src: "/stack/motion.webp", alt: "Motion" },
-            { src: "/stack/shadcn-white.webp", alt: "Shadcn" },
-            { src: "/stack/sanity.svg", alt: "Sanity" },
-            { src: "/stack/mongodb.svg", alt: "MongoDB" },
-            { src: "/stack/zod.svg", alt: "Zod" },
-            { src: "/stack/react-email.webp", alt: "React Email" },
-            { src: "/stack/next-auth.png", alt: "Next Auth" },
-            { src: "/stack/resend-mailer.svg", alt: "Resend" },
-            { src: "/stack/next-intl.png", alt: "Next-Intl" },
-            { src: "/stack/swiper.webp", alt: "Swiper" },
-            { src: "/stack/ts.svg", alt: "Typescript" },
-            { src: "/stack/vscode.webp", alt: "VS Code" }
-        ],
+        images: stackImages.filter(i => i.projectTag?.includes('Shared Wines')),
         demo: routes.housewine(),
         github: routes.housewineGit(),
         features: [
@@ -100,17 +85,7 @@ const rawProjects: Omit<Projects, 'slug'>[] = [
         devType: "Frontend",
         desc: "Secret Garden is a frontend recreation of a modern garden retail experience, built with Next.js and a headless CMS. The project combines dynamic product content, a client-side shopping cart, responsive layouts, and GSAP-powered animation to recreate the feel of a production e-commerce site while exploring modern frontend architecture.",
         tag: ["Featured", "Projects"],
-        images: [
-            { src: "/stack/hygraph.webp", alt: "Hygraph" },
-            { src: "/stack/zustand.webp", alt: "Zustand" },
-            { src: "/stack/formspree.webp", alt: "Formspree" },
-            { src: "/stack/gsap-green.webp", alt: "GSAP" },
-            { src: "/stack/shadcn-white.webp", alt: "Shadcn" },
-            { src: "/stack/nextjs.webp", alt: "Nextjs" },
-            { src: "/stack/swiper.webp", alt: "Swiper" },
-            { src: "/stack/ts.svg", alt: "Typescript" },
-            { src: "/stack/vscode.webp", alt: "VS Code" }
-        ],
+        images: stackImages.filter(i => i.projectTag?.includes('Secret Garden Web')),
         demo: routes.sgclone(),
         github: routes.sgcloneGit(),
         features: [
@@ -155,14 +130,7 @@ const rawProjects: Omit<Projects, 'slug'>[] = [
         devType: "Full Stack",
         desc: "A custom resource management dashboard built with React, Firebase, shadcn/ui, and Motion. The application allows authenticated users to create, manage, search, and filter a collection of development resources through a responsive interface.",
         tag: ["Featured", "Projects"],
-        images: [
-            { src: "/stack/firebase.webp", alt: "Firebase" },
-            { src: "/stack/shadcn-white.webp", alt: "Shadcn" },
-            { src: "/stack/nextjs.webp", alt: "Nextjs" },
-            { src: "/stack/motion.webp", alt: "Motion" },
-            { src: "/stack/ts.svg", alt: "Typescript" },
-            { src: "/stack/vscode.webp", alt: "VS Code" }
-        ],
+        images: stackImages.filter(i => i.projectTag?.includes('Firebase Dashboard')),
         demo: routes.dashboard(),
         github: routes.dashboardGit(),
         features: [
@@ -203,10 +171,7 @@ const rawProjects: Omit<Projects, 'slug'>[] = [
         devType: "Mailer",
         desc: "A responsive HTML email template built with MJML, designed to produce consistent layouts across email clients while keeping the source code maintainable and component-based.",
         tag: ["Projects"],
-        images: [
-            { src: "/stack/mjml-logo.png", alt: "MJML" },
-            { src: "/stack/vscode.webp", alt: "VS Code" }
-        ],
+        images: stackImages.filter(i => i.projectTag?.includes('Secret Garden MJML Mailer')),
         demo: routes.sgmailer(),
         github: routes.sgmailerGit(),
         features: [
@@ -239,14 +204,7 @@ const rawProjects: Omit<Projects, 'slug'>[] = [
         devType: "Frontend",
         desc: "A Next.js developer portfolio focused on advanced frontend animation, using GSAP and ScrollTrigger to create reusable, scroll-driven section transitions, interactive effects, and layered page reveals.",
         tag: ["Projects"],
-        images: [
-            { src: "/stack/shadcn-white.webp", alt: "Shadcn" },
-            { src: "/stack/nextjs.webp", alt: "Nextjs" },
-            { src: "/stack/ts.svg", alt: "Typescript" },
-            { src: "/stack/vscode.webp", alt: "VS Code" },
-            { src: "/stack/hygraph.webp", alt: "Hygraph" },
-            { src: "/stack/gsap-green.webp", alt: "GSAP" }
-        ],
+        images: stackImages.filter(i => i.projectTag?.includes('GSAP Portfolio')),
         demo: routes.gsapportfolio(),
         github: routes.gsapportfolioGit(),
         features: [

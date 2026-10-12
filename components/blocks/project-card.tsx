@@ -46,7 +46,7 @@ export default function ProjectCard({
     slug
 }: ProjectCardProps) {
     return (
-        <Card className="bg-gray-800 py-0 rounded-md hover:outline-2 outline-lime-400 transition duration-200 ease-in">
+        <Card className="py-0 transition duration-200 ease-in bg-gray-800 rounded-md hover:outline-2 outline-lime-400">
 
             <div className="relative h-50">
                 {thumbnail && (
@@ -56,7 +56,7 @@ export default function ProjectCard({
                             alt={title}
                             fill
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                            className="object-cover p-4 z-20"
+                            className="z-20 object-cover p-4"
                             loading='eager'
                         />
                     </Suspense>
@@ -68,16 +68,16 @@ export default function ProjectCard({
                     <Badge className="text-lime-400">{devType}</Badge>
                     <CardTitle className="font-caacupe text-white text-[clamp(1rem,5vw,1.5rem)]">{title}</CardTitle>
                 </div>
-                <CardDescription className="text-white/80 col-span-2 flex-1 line-clamp-5 text-balance">
+                <CardDescription className="flex-1 col-span-2 text-white/80 line-clamp-5 text-balance">
                     {desc}
                 </CardDescription>
             </CardHeader>
 
-            <CardContent className="w-full bg-gray-600 py-4">
+            <CardContent className="w-full py-4 bg-gray-600">
                 <Marquee pauseOnHover pauseOnClick>
                     {images.sort((a, b) => a.alt.localeCompare(b.alt)).map((img) => (
                         <Tooltip key={img.alt}>
-                            <span className="flex items-center justify-center bg-gray-400 p-2 mx-2 h-15 w-15 rounded-2xl border-2 border-lime-400 overflow-hidden">
+                            <span className="flex items-center justify-center p-2 mx-2 overflow-hidden bg-gray-700 border-2 h-15 w-15 rounded-2xl border-lime-400">
                                 {img.src && (
                                     <TooltipTrigger>
                                         <Image
@@ -91,7 +91,7 @@ export default function ProjectCard({
                                         />
                                     </TooltipTrigger>
                                 )}
-                                <TooltipContent className="text-lime-400 font-bold outline-2 outline-white">
+                                <TooltipContent className="font-bold text-lime-400 outline-2 outline-white">
                                     {img.alt}
                                 </TooltipContent>
                             </span>
@@ -101,7 +101,7 @@ export default function ProjectCard({
             </CardContent>
 
             {cta && (
-                <CardFooter className="bg-lime-400 rounded-none">
+                <CardFooter className="rounded-none bg-lime-400">
                     <Link href={routes.projectpage(slug) as Route}>
                         <Button>
                             Veiw Project
